@@ -1,44 +1,54 @@
-using System;
-using UnityEngine;
 using System.IO.Ports;
+using UnityEngine;
 using UnityEngine.InputSystem;
-public class ArduinoConnector : MonoBehaviour
+
+public class ArduinoController : MonoBehaviour
 {
-    SerialPort serialPort = new SerialPort("COM8", 9600); // change COM3 to your Arduino port
-    
-    InputAction Action;
+    SerialPort sp = new SerialPort("COM8", 9600);
 
     void Start()
     {
-        serialPort.Open();
-        serialPort.ReadTimeout = 100;
-        Action = InputSystem.actions.FindAction("Jump");
+        try
+        {
+            sp.Open();
+            sp.ReadTimeout = 50;
+            Debug.Log("Serial port opened!");
+        }
+        catch
+        {
+            Debug.LogError("Could not open serial port!");
+        }
     }
 
     void Update()
     {
-        // Check if Arduino sent message
-        try
-        {
-            string message = serialPort.ReadLine();
-            if (message.Contains("BUTTON_PRESSED"))
-            {
-                Debug.Log("Arduino button pressed!");
-            }
-        }
-        catch (System.Exception) { }
+        // send signal when pressing space
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && sp.IsOpen)
+            sp.Write("1");
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame && sp.IsOpen)
+            sp.Write("0");
 
-        // If press spacebar in Unity
-        
-        if (Action.IsPressed())
+        // check for messages from Arduino
+        if (sp.IsOpen)
         {
-            Debug.Log("Sending LED_ON");
-            serialPort.WriteLine("LED_ON");
+            try
+            {
+                string message = sp.ReadLine();  // read serial line
+                if (message.Contains("TOUCHED"))
+                {
+                    Debug.Log("Arduino said wire touched!");
+                }
+            }
+            catch (System.TimeoutException)
+            {
+                // no message yet
+            }
         }
     }
 
     void OnApplicationQuit()
     {
-        serialPort.Close();
+        if (sp.IsOpen)
+            sp.Close();
     }
 }
