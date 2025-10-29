@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b9c313556171844981ebcbb21e54db, type: 3}
   m_Name: CaptainMessageHolder
   m_EditorClassIdentifier: Assembly-CSharp::MessageHolder
-  videoList:
-  - key: blue
-    clip: {fileID: 32900000, guid: 32d8328810f336a478a016515762f00e, type: 3}
-  - key: Red
-    clip: {fileID: 32900000, guid: 1f516eb302c68224a874595b8f80be4a, type: 3}
+  videoList: []
