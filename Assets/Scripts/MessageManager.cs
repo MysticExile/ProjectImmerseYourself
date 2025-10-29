@@ -19,7 +19,7 @@ public class MessageManager : MonoBehaviour
 
         if (Keyboard.current.nKey.wasPressedThisFrame)
         {
-            StopVideo();
+            pauseVideo();
         }
     }
 
@@ -42,7 +42,14 @@ public class MessageManager : MonoBehaviour
 
     void pauseVideo()
     {
-        
+        if (!videoPlayer.isPaused)
+        {
+            videoPlayer.Pause();
+        }
+        else
+        {
+            videoPlayer.Play();
+        }
     }
     
     void StopVideo()
