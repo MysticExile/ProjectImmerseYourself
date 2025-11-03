@@ -34,11 +34,16 @@ public class ColorCodeManager : MonoBehaviour
     {
         if (arg0 == selectedColor.pass.ToString())
         {
-            Debug.Log("correct");
+            HandleSuccess();
         }
         else
         {
             input.text = "";
         }
+    }
+
+    private void HandleSuccess()
+    {
+        
     }
 }
