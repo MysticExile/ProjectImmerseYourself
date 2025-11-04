@@ -2,13 +2,13 @@
 - Project name: ProjectImmerseYourself
 - Unity version: Unity 6000.2.9f1
 - Active scene:
-  - Name: ColorCodeScene
+  - Name: CommandeMessageScene
   - Tags:
     - Untagged, Respawn, Finish, EditorOnly, MainCamera, Player, GameController
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI
 - Active game object:
-  - Name: ColorCodeManager
+  - Name: VideoCanvas
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
