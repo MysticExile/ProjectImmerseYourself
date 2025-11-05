@@ -21,6 +21,7 @@ public class MapSelector : MonoBehaviour
     [SerializeField] private string submitTextString = "Press [P] to submit flightpath.";
     [SerializeField] private CanvasGroup animationCanvas;
     [SerializeField] private CanvasGroup successCanvas;
+    [SerializeField] private List<Sprite> selectedSprites = new List<Sprite>();
 
     [Header("Audio Feedback")]
     public AudioSource audioSource;     // Assign in Inspector
@@ -153,6 +154,12 @@ public class MapSelector : MonoBehaviour
         string text = (currentIndex < pointText.Count) ? pointText[currentIndex] : $"Point {currentIndex}";
         if (feedbackText != null)
             feedbackText.text = $"Selected: {text}";
+
+        var img = points[currentIndex].GetComponent<Image>();
+        if (img != null)
+        {
+            img.sprite = selectedSprites[currentIndex];
+        }
 
         Debug.Log($"Selected point {currentIndex} at {selected} ({text})");
     }
