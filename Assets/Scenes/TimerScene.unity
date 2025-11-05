@@ -434,21 +434,26 @@ MonoBehaviour:
   SpaceToConfirm: {fileID: 798443008}
   OrderImage: {fileID: 430259046}
   orderHolder:
-  - orderName: first
+  - orderName: electrical
     orderImage: {fileID: 21300000, guid: 158fb7f0818c2b348aaadc33f3dafb3b, type: 3}
-    AudioStartID: 
-  - orderName: second
+    HasAudio: 1
+    AudioClipName: Rlectricity_Broken
+    LoopAudioClipName: 
+  - orderName: vent
     orderImage: {fileID: 21300000, guid: 7fd35f076e404b64b92125cce3e609cd, type: 3}
-    AudioStartID: 
-  - orderName: third
+    HasAudio: 1
+    AudioClipName: VentStop
+    LoopAudioClipName: VentLoop
+  - orderName: map
     orderImage: {fileID: 21300000, guid: 1600a2fa42be3e0409945beef35fb46a, type: 3}
-    AudioStartID: 
-  - orderName: fourth
-    orderImage: {fileID: 21300000, guid: 58d23e02e9441be4c8779a90578df398, type: 3}
-    AudioStartID: 
-  - orderName: fifth
+    HasAudio: 0
+    AudioClipName: 
+    LoopAudioClipName: 
+  - orderName: slop
     orderImage: {fileID: 21300000, guid: 6113c67dc86a35e41abefaf8098403f4, type: 3}
-    AudioStartID: 
+    HasAudio: 1
+    AudioClipName: TimeBroken
+    LoopAudioClipName: 
   audioManager: {fileID: 2033887613}
 --- !u!1 &650959753
 GameObject:
@@ -2037,13 +2042,13 @@ MonoBehaviour:
   audioClips:
   - ID: Ambience
     Clip: {fileID: 8300000, guid: 25719089716f6b64f92344af2bb1c493, type: 3}
-    Loop: 0
+    Loop: 1
   - ID: Electricity_Break
     Clip: {fileID: 8300000, guid: c656a22a3dc307948bcebe576654ebb5, type: 3}
-    Loop: 0
+    Loop: 1
   - ID: Rlectricity_Broken
     Clip: {fileID: 8300000, guid: edfaf11bdd415b445a20dc769e4697db, type: 3}
-    Loop: 0
+    Loop: 1
   - ID: Error
     Clip: {fileID: 8300000, guid: f2092acfc5a21dd439bf016da1f54a5d, type: 3}
     Loop: 0
@@ -2058,19 +2063,19 @@ MonoBehaviour:
     Loop: 0
   - ID: TimeBroken
     Clip: {fileID: 8300000, guid: 22a754a16fce4cf4986683831815e914, type: 3}
-    Loop: 0
+    Loop: 1
   - ID: TimeFixed
     Clip: {fileID: 8300000, guid: 6bc9a6801dbe6c746899f1559c30e3f1, type: 3}
-    Loop: 0
+    Loop: 1
   - ID: VentLoop
     Clip: {fileID: 8300000, guid: 0fa46bfc83b1e8c4d970c273c0d8de09, type: 3}
-    Loop: 0
+    Loop: 1
   - ID: VentStop
     Clip: {fileID: 8300000, guid: bc70173e5553dee4f81bdf4d2f0a83aa, type: 3}
-    Loop: 0
+    Loop: 1
   - ID: MusicCalm
     Clip: {fileID: 8300000, guid: d8ab4f2c004a1624aac864116adffdb3, type: 3}
-    Loop: 0
+    Loop: 1
 --- !u!1 &2089164654
 GameObject:
   m_ObjectHideFlags: 0

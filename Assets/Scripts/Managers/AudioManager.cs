@@ -17,6 +17,12 @@ public class AudioManager : MonoBehaviour
 
     public static event Action<string> OnPlayAudio;
 
+    void Start()
+    {
+        PlayByID("VentLoop");
+        PlayByID("Ambience");
+        PlayByID("MusicCalm");
+    }
     private void OnEnable()
     {
         OnPlayAudio += PlayByID;
