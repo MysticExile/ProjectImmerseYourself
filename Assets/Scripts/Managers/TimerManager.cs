@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class TimerManager : MonoBehaviour
 {
@@ -95,6 +96,12 @@ public class TimerManager : MonoBehaviour
         {
             TimerEnd();
         }
+    }
+
+    public void Addtime(int time)
+    {
+        // NEVER after 30 percent
+        CurrentTime += time;
     }
 
     private void HandleBeepBlinkShake()
@@ -243,8 +250,6 @@ public class TimerManager : MonoBehaviour
         yield return new WaitForSeconds(12f);
         
         OverlayCanvas.SetActive(false);
-        DarkImage.SetActive(true);
-        
-        
+        DarkImage.GameObject().SetActive(true);
     }
 }

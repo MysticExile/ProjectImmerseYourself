@@ -72,7 +72,6 @@ public class OrderManager : MonoBehaviour
             if (orderConformations == 0)
             {
                 audioManager.PlayByID("Error");
-                timerManager.StartTimer();
                 OrderPlaceHolder.gameObject.SetActive(false);
                 RandomizeOrder();
                 OrderImage.gameObject.SetActive(true);
