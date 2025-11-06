@@ -98,6 +98,12 @@ public class TimerManager : MonoBehaviour
         }
     }
 
+    public void Addtime(int time)
+    {
+        // NEVER after 30 percent
+        CurrentTime += time;
+    }
+
     private void HandleBeepBlinkShake()
     {
         if (!finalPhaseStarted && CurrentTime <= nextNormalBeepTime)

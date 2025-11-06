@@ -36,6 +36,16 @@ public class OrderManager : MonoBehaviour
         {
             HandleOrderConfirmed();
         }
+
+        if (Keyboard.current.tKey.wasPressedThisFrame)
+        {
+            timerManager.StartTimer();
+        }
+
+        if (Keyboard.current.uKey.wasPressedThisFrame)
+        {
+            timerManager.Addtime(60);
+        }
     }
 
     private void RandomizeOrder()
@@ -65,7 +75,6 @@ public class OrderManager : MonoBehaviour
             if (orderConformations == 0)
             {
                 audioManager.PlayByID("Error");
-                timerManager.StartTimer();
                 OrderPlaceHolder.gameObject.SetActive(false);
                 RandomizeOrder();
                 OrderImage.gameObject.SetActive(true);
