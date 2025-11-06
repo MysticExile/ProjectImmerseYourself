@@ -1162,7 +1162,7 @@ MonoBehaviour:
   NormalBeepClip: {fileID: 8300000, guid: 10eb1c0be4cf66642ab2c99961d677ae, type: 3}
   FinalCountdownClip: {fileID: 8300000, guid: 161c56bc2d39ac944826b22052273864, type: 3}
   FinalCountdownClip2: {fileID: 8300000, guid: f6f787fdcb7835d469df91141bfa4219, type: 3}
-  DeathClip: {fileID: 8300000, guid: 463d8479dadbbea4bbe705dc13e459c4, type: 3}
+  DeathClip: {fileID: 8300000, guid: 1f1265f52d562654ea040fc67ae23dfe, type: 3}
   BackgroundTerminalImage: {fileID: 1556212766}
   BlinkColor: {r: 1, g: 0, b: 0, a: 1}
   Deathcolor: {r: 0.34901962, g: 0.22352941, b: 0.22352941, a: 1}
